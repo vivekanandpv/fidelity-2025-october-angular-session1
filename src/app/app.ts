@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { CurrencyClonePipe } from './currency-clone-pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CurrencyClonePipe],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('learning-session1');
+  price: number = 900.4567;
 }
