@@ -1,4 +1,11 @@
 <div class="p-5">
   <h2>Learning Angular</h2>
   <hr />
+  <button class="btn btn-primary" (click)="handleClick()">Click Me!</button>
+
+  <hr />
+
+  <input type="text" class="form-control" name="input1" (input)="handleInput($event)" />
+  <hr />
+  <input type="text" class="form-control" name="input2" (input)="handleInput($event)" />
 </div>
