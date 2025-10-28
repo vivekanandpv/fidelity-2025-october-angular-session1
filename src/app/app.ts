@@ -1,12 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
-export class App {
-  protected readonly title = signal('learning-session1');
+export class App implements AfterViewInit {
+  @ViewChild('myP') pEl!: ElementRef;
+
+  ngAfterViewInit(): void {
+    console.log(this.pEl.nativeElement.textContent);
+  }
 }
