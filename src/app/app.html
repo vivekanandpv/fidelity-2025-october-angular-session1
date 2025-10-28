@@ -2,5 +2,24 @@
   <h2>Learning Angular</h2>
   <hr />
   <p>Count: {{ count() }}</p>
+  <p>Double Count: {{ doubleCount() }}</p>
+  <p>Double Count: {{ doubleCount() }}</p>
+  <p>Double Count: {{ doubleCount() }}</p>
+  <p>Double Count: {{ doubleCount() }}</p>
+  <p>Double Count: {{ doubleCount() }}</p>
   <button class="btn btn-primary" (click)="increment()">Increment</button>
+
+  <hr />
+
+  <p>{{ this.person().firstName }} {{ this.person().lastName }}</p>
+  <button class="btn btn-primary" (click)="changeDetails()">Change Person</button>
+
+  <hr />
+
+  <button class="btn btn-primary" (click)="addColor()">Add Color</button>
+  <ul>
+    @for (color of colors(); track $index) {
+    <li>{{ color }}</li>
+    }
+  </ul>
 </div>
