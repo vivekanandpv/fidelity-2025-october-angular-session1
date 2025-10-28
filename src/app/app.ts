@@ -9,4 +9,8 @@ import { Sample } from './sample/sample';
 })
 export class App {
   parentMessage = signal('Good afternoon!');
+
+  messageHandler(m: string) {
+    console.log('Parent component got:', m);
+  }
 }

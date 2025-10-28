@@ -1,4 +1,4 @@
-import { Component, input, signal, WritableSignal } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-sample',
@@ -11,4 +11,10 @@ export class Sample {
   // message = input<string>('default message');
 
   message = input.required<string>();
+
+  onMessageSent = output<string>();
+
+  clickHandler() {
+    this.onMessageSent.emit('Hello from child component');
+  }
 }
