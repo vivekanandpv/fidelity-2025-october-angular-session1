@@ -1,4 +1,41 @@
 <div class="p-5">
   <h2>Learning Angular</h2>
   <hr />
+  <button class="btn btn-primary" (click)="toggle()">Toggle</button>
+
+  <p>{{ visible() ? 'It is visible' : 'It is not visible' }}</p>
+
+  <hr />
+
+  @if(visible()) {
+  <p>This is visible</p>
+  } @else {
+  <h4>This is invisible</h4>
+  }
+
+  <hr />
+  <button class="btn btn-primary" (click)="changeLanguage()">Change Language</button>
+
+  @if (language() === 'en') {
+  <p>Hello in en</p>
+  } @else if(language() === 'fr') {
+  <p>Hello in fr</p>
+  } @else {
+  <p>Hello in other</p>
+  }
+
+  <hr />
+
+  @switch (language()) { @case ('en') {
+  <h4>English</h4>
+  } @case ('fr') {
+  <h4>French</h4>
+  } @default {
+  <h4>Other language</h4>
+  } }
+
+  <hr />
+  @if(person().address.city.location; as location) {
+  <p>Location: {{ location }}</p>
+  }
 </div>

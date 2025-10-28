@@ -1,12 +1,30 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('learning-session1');
+  visible = signal(true);
+
+  language = signal('en');
+
+  person = signal({
+    firstName: 'John',
+    address: {
+      city: {
+        location: 'London',
+      },
+    },
+  });
+
+  toggle() {
+    this.visible.update((v) => !v);
+  }
+
+  changeLanguage() {
+    // this.language.set('fr');
+    this.language.set('de');
+  }
 }
