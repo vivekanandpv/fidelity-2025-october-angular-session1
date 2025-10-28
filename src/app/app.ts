@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Sample } from './sample/sample';
 
 @Component({
@@ -7,4 +7,6 @@ import { Sample } from './sample/sample';
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {}
+export class App {
+  parentMessage = signal('Good afternoon!');
+}

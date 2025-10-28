@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, signal, WritableSignal } from '@angular/core';
 
 @Component({
   selector: 'app-sample',
@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './sample.scss',
 })
 export class Sample {
+  // message = input<string>();
+  // message = input<string>('default message');
 
+  message = input.required<string>();
 }
