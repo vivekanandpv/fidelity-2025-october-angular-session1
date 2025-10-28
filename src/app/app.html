@@ -1,4 +1,35 @@
 <div class="p-5">
   <h2>Learning Angular</h2>
   <hr />
+
+  <ul>
+    @for (city of cities(); track $index) {
+    <!-- You can use implicit ancillary variables such as: $first, $last, $even, $odd directly 
+    or, you can alias such as city of cities(); track $index; let i = $index, f = $first  -->
+    <li>{{ $index }} -> {{ city }}</li>
+    } @empty {
+    <li>No cities found...</li>
+    }
+  </ul>
+
+  <hr />
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of users(); track trackUserByRole(user)) {
+      <tr>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.role }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
 </div>
