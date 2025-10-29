@@ -1,13 +1,17 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { MyClass } from './my-class';
+import { MyIf } from './my-if';
 
 @Component({
   selector: 'app-root',
-  imports: [MyClass],
+  imports: [MyClass, MyIf],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('learning-session1');
+  visible = signal(true);
+
+  toggle() {
+    this.visible.update((v) => !v);
+  }
 }
